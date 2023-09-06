@@ -41,8 +41,8 @@ public class GameLogic : MonoBehaviour
         {
             return;
         }
-        // Check if the game is over and the player presses 'R' to restart.
-        if (isGameOver && Input.GetKeyDown(KeyCode.R))
+        // Check if the game is over and the player presses 'enter' to restart.
+        if (isGameOver && Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             StartGame();
         }

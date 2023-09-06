@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
             if (enemy == null) continue;
             if (Vector3.Distance(player.transform.position, enemy.transform.position) > maxDistance)
             {
-                Destroy(enemy); 
+                Destroy(enemy);
             }
         }
     }
@@ -71,4 +71,17 @@ public class EnemySpawner : MonoBehaviour
         Transform spawnPoint = spawnPoints[randomSpawnIndex];
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
+
+    public int GetNumberOfWaves()
+    {
+        return currentWave;
+    }
+
+    public int GetEnemiesRemaining()
+    {
+        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+
+        return enemyCount;
+    }
+
 }
